@@ -1,0 +1,192 @@
+/* Make sure html, body and root div take full height */
+html, body, #root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent scroll on large screens */
+}
+
+/* Wrapper fills full viewport height */
+.auth-layout-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Page heading on top */
+.page-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Main container - flex side by side, fill remaining height */
+.auth-layout-container {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  height: 90vh;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border-radius: 12px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+/* Left side info */
+.left-info {
+  flex: 1;
+  padding: 40px 50px;
+  background: linear-gradient(135deg, #007BFF 0%, #00BFFF 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+.left-info h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.left-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.left-info ul {
+  list-style: disc inside;
+  margin-bottom: 25px;
+}
+
+.left-info li {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Right side form */
+.right-form {
+  flex: 1;
+  padding: 40px 50px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 280px;
+}
+
+/* Toggle buttons */
+.toggle-buttons {
+  display: flex;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #007BFF;
+  border-radius: 8px;
+  background-color: white;
+  color: #007BFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons button.active,
+.toggle-buttons button:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 18px;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1.8px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+.form button {
+  padding: 12px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message */
+.error {
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Responsive stack */
+@media (max-width: 768px) {
+  html, body, #root {
+    overflow: auto;
+  }
+  .auth-layout-wrapper {
+    justify-content: flex-start;
+    padding: 10px;
+    height: auto;
+  }
+  .auth-layout-container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .left-info, .right-form {
+    padding: 30px 20px;
+    min-width: auto;
+  }
+  .left-info h2 {
+    font-size: 1.8rem;
+  }
+  .page-heading {
+    font-size: 2rem;
+  }
+}
